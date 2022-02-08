@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Change an Element's Class with JavaScript</title>
+<style>
+    .highlight{
+        background: yellow;
+    }
+    .bordered{        
+        border: 5px solid #000;
+    }
+    .padded{
+        padding: 20px;
+    }
+    .hide{
+        display: none;
+    }
+</style>
+</head>
+<body>
+    <div id="content">
+        <h1>This is a heading</h1>
+        <p>This is a paragraph of text.</p>
+    </div>
+    
+    <p>
+        <button type="button" onclick="addSingleClass()">Add Highlight Class</button>
+        <button type="button" onclick="addMultipleClass()">Add Bordered and Padded Class</button>        
+    </p>
+    <p>
+        <button type="button" onclick="removeSingleClass()">Remove Highlight Class</button>  
+        <button type="button" onclick="removeMultipleClass()">Remove Bordered and Padded Class</button>
+    </p>
+    <p>
+        <button type="button" onclick="toggleClass()">Toggle Hide Class</button>
+    </p>
+    
+    <script>
+        // Selecting element
+        var elem = document.getElementById("content");
+        
+        function addSingleClass(){
+            elem.classList.add("highlight");  // Add a highlight class
+        }        
+        function addMultipleClass(){
+            elem.classList.add("bordered", "padded");  // Add bordered and padded class
+        }
+        function removeSingleClass(){
+            elem.classList.remove("highlight");  // Remove highlight class
+        }
+        function removeMultipleClass(){
+            elem.classList.remove("bordered", "padded");  // Remove bordered and padded class
+        }
+        function toggleClass(){
+            elem.classList.toggle("hide");  // Toggle hide class
+        }
+    </script>
+</body>
+</html>
